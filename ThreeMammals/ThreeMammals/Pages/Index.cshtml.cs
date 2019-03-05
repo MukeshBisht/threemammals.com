@@ -9,9 +9,9 @@ namespace ThreeMammals.Pages
 {
     public class IndexModel : PageModel
     {
-        public IActionResult OnGet()
+        public void OnGet()
         {
-            return RedirectToPage("/ocelot");
+            // return RedirectToPage("/ocelot");
         }
     }
 }
