@@ -1,0 +1,26 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+    <div class="row">
+        <div class="col s12 m4">
+            <div class="icon-block">
+                <a class="navbar-brand" asp-area="" asp-page="/Ocelot"><h5 class="center">Ocelot</h5></a>
+                <p class="light">
+                    Ocleot is an API Gateway aimed at people using .NET running a micro services / service orientated architecture that need a unified point of entry into their system.
+                    Ocelot is fast, scaleable and provides authentication, routing, request aggregation among many other features.
+                </p>
+            </div>
+        </div>
+        <div class="col s12 m4">
+            <div class="icon-block">
+                <a class="navbar-brand" asp-area="" asp-page="/Pushy"><h5 class="center">Pushy</h5></a>
+                <p class="light">
+                    Pushy is an open source Wordpress plugin that pushes data out of wordpress in the form of events. This enables using Wordpress as a headless CMS. That is rather than user requests for content hitting Wordpress for rendering etc you can create your own UI using whatever technology you want.
+                </p>
+            </div>
+        </div>
+    </div>
+

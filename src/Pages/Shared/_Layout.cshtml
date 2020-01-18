@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ThreeMammals</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-page="/Index">ThreeMammals</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Ocelot">Ocelot</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Pushy">Pushy</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+        <footer class="border-top">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Bio</h5>
+                    <p class="grey-text text-lighten-4">
+                        We are a team of professional software engineers working on these projects in our spare time.
+                        Any help or support is greatly appreciated.
+                    </p>
+                </div>
+                <div class="col l3 s12">
+                    <h5 class="white-text">Links</h5>
+                    <ul>
+                        <li><a class="white-text" href="https://github.com/ThreeMammals/Ocelot">GitHub</a></li>
+                        <li><a class="white-text" href="http://ocelot.readthedocs.io/en/latest/">Documentation</a></li>
+                        <li><a class="white-text" href="https://www.nuget.org/packages/Ocelot/">NuGet</a></li>
+                        <li><a class="white-text" href="https://circleci.com/gh/ThreeMammals/Ocelot/tree/master">AppVeyor</a></li>
+                    </ul>
+                </div>
+                <div class="col l3 s12">
+                    <h5 class="white-text">Connect</h5>
+                    <ul>
+                        <li><a href="mailto:tom@threemammals.com" class="white-text">Email</a></li>
+                        <li><a class="white-text" href="https://www.linkedin.com/company/threemammals/">LinkedIn</a></li>
+                        <li><a class="white-text" href="https://twitter.com/ThreeMammals">Twitter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                &copy; @DateTime.Now.Year - ThreeMammals
+            </div>
+        </footer>
+
+    </div>
+
+    
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
