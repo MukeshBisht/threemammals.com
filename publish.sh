@@ -1,5 +1,5 @@
 DOCKER_LATEST_TAG="latest"
-DOCKER_TAG="0.0.1"
+DOCKER_TAG="0.0.2"
 
 # could do this but does browser login, probably can do with service principal or something
 # az acr login --name threemammals
