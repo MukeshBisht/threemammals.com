@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Net.Http.Headers;
 
 namespace ThreeMammals
 {
@@ -44,7 +45,20 @@ namespace ThreeMammals
 
             app.UseHttpsRedirection();
 
-            app.UseStaticFiles();
+            app.UseStaticFiles(new StaticFileOptions
+            {
+                OnPrepareResponse = ctx =>
+                {
+                    ctx.Context.Response.GetTypedHeaders().CacheControl =
+                        new CacheControlHeaderValue()
+                        {
+                            Public = true,
+                            MaxAge = TimeSpan.FromHours(4)
+                        };
+                    ctx.Context.Response.Headers[HeaderNames.Vary] =
+                        new string[] { "Accept-Encoding" };
+                }
+            });
 
             app.UseRouting();
 
@@ -55,12 +69,12 @@ namespace ThreeMammals
             app.Use(async (context, next) =>
             {
                 context.Response.GetTypedHeaders().CacheControl =
-                    new Microsoft.Net.Http.Headers.CacheControlHeaderValue()
+                    new CacheControlHeaderValue()
                     {
                         Public = true,
                         MaxAge = TimeSpan.FromHours(4)
                     };
-                context.Response.Headers[Microsoft.Net.Http.Headers.HeaderNames.Vary] =
+                context.Response.Headers[HeaderNames.Vary] =
                     new string[] { "Accept-Encoding" };
 
                 await next();
